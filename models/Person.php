@@ -26,6 +26,7 @@ use Yii;
  * @property string|null $deleted_at
  * @property int $institution_id
  * @property int|null $city_id
+ * @property string|null $id_myhouse
  *
  * @property Person $associatedPerson
  * @property PersonCategories $categories
@@ -58,11 +59,11 @@ class Person extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['person_type_id', 'name', 'institution_id'], 'required'],
             [['person_type_id', 'categories_id', 'associated_person', 'institution_id', 'city_id'], 'default', 'value' => null],
             [['person_type_id', 'categories_id', 'associated_person', 'institution_id', 'city_id'], 'integer'],
             [['special_taxpayer', 'foreigner', 'status'], 'boolean'],
-            [['address', 'emails'], 'string'],
+            [['name', 'institution_id'], 'required'],
+            [['address', 'emails', 'id_myhouse'], 'string'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['ruc'], 'string', 'max' => 13],
             [['cedula'], 'string', 'max' => 10],
@@ -101,6 +102,7 @@ class Person extends \yii\db\ActiveRecord
             'deleted_at' => 'Deleted At',
             'institution_id' => 'Institution ID',
             'city_id' => 'City ID',
+            'id_myhouse' => 'Id Myhouse',
         ];
     }
 

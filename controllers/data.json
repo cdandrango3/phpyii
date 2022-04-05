@@ -1,0 +1,282 @@
+[
+  {
+    "id": "Bunnymartinez05@gmail.com",
+    "Apellido": "AA",
+    "Cedula": 1234567897,
+    "Correo": "Bunnymartinez05@gmail.com",
+    "Nombre": "Pame",
+    "Telefono": "0999586584"
+  },
+  {
+    "id": "alejandro.mata@tgecuador.com",
+    "Apellido": "Mata",
+    "Cedula": 1000000011,
+    "Correo": "alejandro.mata@tgecuador.com",
+    "Nombre": "Alejandro",
+    "Telefono": "0983080310"
+  },
+  {
+    "id": "b.dob@hotmail.com",
+    "Apellido": "Ortuño",
+    "Cedula": 1725964877,
+    "Correo": "b.dob@hotmail.com",
+    "Nombre": "Bryan",
+    "Telefono": "00000000"
+  },
+  {
+    "id": "bryan.pantoja@outlook.com",
+    "Apellido": "Pantoja",
+    "Cedula": 1723456875,
+    "Correo": "bryan.pantoja@outlook.com",
+    "Nombre": "Bryan",
+    "Telefono": "0984332224"
+  },
+  {
+    "id": "bunnymartinez05@gmail.com",
+    "Apellido": "",
+    "Cedula": 7896541237,
+    "Correo": "bunnymartinez05@gmail.com",
+    "Nombre": "Ejemplo",
+    "Telefono": 573041017759
+  },
+  {
+    "id": "cajerotg@tgecuador.com",
+    "Apellido": "Nicolas",
+    "Cedula": 1000000007,
+    "Correo": "cajerotg@tgecuador.com",
+    "Nombre": "Nicolas",
+    "Telefono": "0987832438"
+  },
+  {
+    "id": "contabilidad1@tgecuador.com",
+    "Apellido": "Llumiquinga",
+    "Cedula": 1724171739,
+    "Correo": "contabilidad1@tgecuador.com",
+    "Nombre": "Kevin",
+    "Telefono": "0995775176"
+  },
+  {
+    "id": "criss.alejo19@gmail.com",
+    "Apellido": "Alejandro",
+    "Cedula": 1751404037,
+    "Correo": "criss.alejo19@gmail.com",
+    "Nombre": "Christian",
+    "Telefono": "0984774000"
+  },
+  {
+    "id": "davidquish1998@gmail.com",
+    "Apellido": "Quishpe",
+    "Cedula": 1725250755,
+    "Correo": "davidquish1998@gmail.com",
+    "Nombre": "David",
+    "Telefono": "0985465215"
+  },
+  {
+    "id": "eri.yuli010199@gmail.com",
+    "Apellido": "Sanchez",
+    "Cedula": 1717953747,
+    "Correo": "eri.yuli010199@gmail.com",
+    "Nombre": "Mercedes",
+    "Telefono": "0997665317"
+  },
+  {
+    "id": "esalinasv1@hotmail.com",
+    "Apellido": "Salinas",
+    "Cedula": "0302114533",
+    "Correo": "esalinasv1@hotmail.com",
+    "Nombre": "Erick",
+    "Telefono": "0995605441"
+  },
+  {
+    "id": "facturasmarlonlarco@gmail.com",
+    "Apellido": "Larco",
+    "Cedula": 1000000008,
+    "Correo": "facturasmarlonlarco@gmail.com",
+    "Nombre": "Marlon",
+    "Telefono": "0958795999"
+  },
+  {
+    "id": "franklinbaque@gmail.com",
+    "Apellido": "Baque",
+    "Cedula": 1000000001,
+    "Correo": "franklinbaque@gmail.com",
+    "Nombre": "Franklin",
+    "Telefono": "0969640659"
+  },
+  {
+    "id": "gerencia@grupoeasyhouse.com",
+    "Apellido": "EasyHouse",
+    "Cedula": 1725250771,
+    "Correo": "gerencia@grupoeasyhouse.com",
+    "Nombre": "Pamela",
+    "Telefono": "0983385821"
+  },
+  {
+    "id": "gracielagina@yahoo.com",
+    "Apellido": "Calderon",
+    "Cedula": 1724990047,
+    "Correo": "gracielagina@yahoo.com",
+    "Nombre": "Gina",
+    "Telefono": "0998098452"
+  },
+  {
+    "id": "jecer18@hotmail.com",
+    "Apellido": "Cerna",
+    "Cedula": 1711577096,
+    "Correo": "jecer18@hotmail.com",
+    "Nombre": "Jessica",
+    "Telefono": "0999845740"
+  },
+  {
+    "id": "joaquinrodasr@gmail.com",
+    "Apellido": "Reyes",
+    "Cedula": 148451165,
+    "Correo": "joaquinrodasr@gmail.com",
+    "Nombre": "Sebastian",
+    "Telefono": 4845131
+  },
+  {
+    "id": "jrodas88@hotmail.com",
+    "Apellido": "Rodas",
+    "Cedula": 1719876557,
+    "Correo": "jrodas88@hotmail.com",
+    "Nombre": "Joaquin",
+    "Telefono": "0984256551"
+  },
+  {
+    "id": "kleberortega72@gmail.com",
+    "Apellido": "Pozo",
+    "Cedula": 1001666971,
+    "Correo": "kleberortega72@gmail.com",
+    "Nombre": "Kleber",
+    "Telefono": "099755573"
+  },
+  {
+    "id": "klever.vivas@yahoo.es",
+    "Apellido": "Vivas",
+    "Cedula": 1725250771,
+    "Correo": "klever.vivas@yahoo.es",
+    "Nombre": "Klever",
+    "Telefono": "0987654321"
+  },
+  {
+    "id": "metaldesignecuador@gmail.com",
+    "Apellido": "Cueva",
+    "Cedula": 1718095795,
+    "Correo": "metaldesignecuador@gmail.com",
+    "Nombre": "Daniel",
+    "Telefono": "0996777759"
+  },
+  {
+    "id": "mv_sm@hotmail.com",
+    "Apellido": "Soria",
+    "Cedula": 1710550094,
+    "Correo": "mv_sm@hotmail.com",
+    "Nombre": "Marco",
+    "Telefono": "0999291767"
+  },
+  {
+    "id": "residente1234@prueba.com",
+    "Apellido": "residente1234",
+    "Cedula": 123456789000,
+    "Correo": "residente1234@prueba.com",
+    "Nombre": "residente1234",
+    "Telefono": 25555
+  },
+  {
+    "id": "servicio.tecnico@tgecuador.com",
+    "Apellido": "Bosmediano",
+    "Cedula": 1000000019,
+    "Correo": "servicio.tecnico@tgecuador.com",
+    "Nombre": "Leonardo",
+    "Telefono": "0984550054"
+  },
+  {
+    "id": "soporte.tecnico2@tgecuador.com",
+    "Apellido": "Stalin",
+    "Cedula": 1000000014,
+    "Correo": "soporte.tecnico2@tgecuador.com",
+    "Nombre": "Stalin",
+    "Telefono": "0987092206"
+  },
+  {
+    "id": "tgerika44@gmail.com",
+    "Apellido": "Díaz",
+    "Cedula": 1234567890,
+    "Correo": "tgerika44@gmail.com",
+    "Nombre": "Erika",
+    "Telefono": "0958886139"
+  },
+  {
+    "id": "ventas10@tgecuador.com",
+    "Apellido": "Narvaez",
+    "Cedula": 1000000013,
+    "Correo": "ventas10@tgecuador.com",
+    "Nombre": "Kevin",
+    "Telefono": "0992886746"
+  },
+  {
+    "id": "ventas12@tgecuador.com",
+    "Apellido": "Rivadeneira",
+    "Cedula": 1725098535,
+    "Correo": "ventas12@tgecuador.com",
+    "Nombre": "Kendra",
+    "Telefono": "0978805787"
+  },
+  {
+    "id": "ventas4@tgecuador.com",
+    "Apellido": "Olmedo",
+    "Cedula": 1000000009,
+    "Correo": "ventas4@tgecuador.com",
+    "Nombre": "Dario",
+    "Telefono": "0987096197"
+  },
+  {
+    "id": "ventas6@tgecuador.com",
+    "Apellido": "Nicolas",
+    "Cedula": 1000000003,
+    "Correo": "ventas6@tgecuador.com",
+    "Nombre": "Nicolas",
+    "Telefono": "0998072367"
+  },
+  {
+    "id": "ventas7@tgecuador.com",
+    "Apellido": "Olmedo",
+    "Cedula": 1000000006,
+    "Correo": "ventas7@tgecuador.com",
+    "Nombre": "Katherine",
+    "Telefono": "0984676313"
+  },
+  {
+    "id": "ventas8@tgecuador.com",
+    "Apellido": "Hidalgo",
+    "Cedula": 7894561230,
+    "Correo": "ventas8@tgecuador.com",
+    "Nombre": "Natasha",
+    "Telefono": "0978805787"
+  },
+  {
+    "id": "ventas9@tgecuador.com",
+    "Apellido": "Santiago",
+    "Cedula": 1000000010,
+    "Correo": "ventas9@tgecuador.com",
+    "Nombre": "Santiago",
+    "Telefono": "0980216427"
+  },
+  {
+    "id": "ventas@tgecuador.com",
+    "Apellido": "Taranchenko",
+    "Cedula": 1752824829,
+    "Correo": "ventas@tgecuador.com",
+    "Nombre": "Vladyslav",
+    "Telefono": "0983899561"
+  },
+  {
+    "id": "yulissa_alcivar@outlook.com",
+    "Apellido": "Alcívar Sánchez",
+    "Cedula": 2300218068,
+    "Correo": "yulissa_alcivar@outlook.com",
+    "Nombre": "Erika Yulissa",
+    "Telefono": "0980851411"
+  }
+]

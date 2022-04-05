@@ -37,11 +37,12 @@ class IngresosController extends Controller
             $json = json_decode($data);
             $headfact = new Headfact();
             yii::debug($json);
+            $person=Person::find()->where(["id_myhouse"=>$json->Usuario])->one();
             $nfac=$headfact->find()->select(["n_documentos"])->where(["id"=>($headfact->find()->select(["MAX(id)"]))])->asArray()->one();
             $num=explode("-",$nfac["n_documentos"])[2]?:1;
             $headfact->n_documentos = $this->getnfact(1,3)."-".$this->getnfact(1,3)."-".$this->getnfact(intval($num)+1,12);
             $headfact->autorizacion = "";
-            $headfact->id_personas = 1;
+            $headfact->id_personas = $person->id;
             $headfact->tipo_de_documento = "Cliente";
             $headfact->save();
             yii::debug($headfact->errors);
@@ -223,7 +224,7 @@ class IngresosController extends Controller
                     }
                             $chargem = new Charges();
                             $chargem->n_document = $headfact->n_documentos;;
-                            $chargem->person_id = 1;
+                            $chargem->person_id = $person->id;
                             $chargem->Description = "bodyfact";
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
