@@ -57,7 +57,7 @@ class IngresosController extends Controller
                         $facbody = new FacturaBody;
                         $facbody->cant = 1;
                         $isiva=$i_pro["product_iva_id"];
-                        $facbody->precio_u = ($isiva==12)?$val->Valor-($val->Valor)*0.12:$val->Valor;
+                        $facbody->precio_u = ($isiva>0)?$val->Valor-($val->Valor)*$is_pro/100:$val->Valor;
                         $sumiva+=($isiva==12)?($val->Valor)*0.12:0;
                         $facbody->precio_total =$facbody->precio_u * $facbody->cant ;
                         $facbody->id_producto = $i_pro["id"];
@@ -72,13 +72,13 @@ class IngresosController extends Controller
                     $facbody = new FacturaBody;
                     $facbody->cant = 1;
                     $isiva=$i_pro["product_iva_id"];
-                    $facbody->precio_u = ($isiva==12)?$json->Valor-($json->Valor)*0.12:$json->Valor;
-                    $sumiva+=($isiva==12)?($json->Valor)*0.12:0;
+                    $facbody->precio_u = ($isiva>0)?($json->Valor)-($json->Valor)*($isiva/100):$json->Valor;
+                    $sumiva+=($isiva > 0)?($json->Valor)*($isiva/100):0;
                     $facbody->precio_total =$facbody->precio_u * $facbody->cant ;
                     $facbody->id_producto = $i_pro["id"];
                     $facbody->id_head = $headfact->n_documentos;
                     $facbody->save();
-                    $sum += $json->Valor;
+                    $sum += $facbody->precio_total;
                 }
                 $facturafin = new Facturafin;
                 $c = rand(1, 100090000);
