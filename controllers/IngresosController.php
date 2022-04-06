@@ -57,8 +57,8 @@ class IngresosController extends Controller
                         $facbody = new FacturaBody;
                         $facbody->cant = 1;
                         $isiva=$i_pro["product_iva_id"];
-                        $facbody->precio_u = ($isiva>0)?$val->Valor-($val->Valor)*$i_pro/100:$val->Valor;
-                        $sumiva+=($isiva>0)?($val->Valor)*($i_pro/100):0;
+                        $facbody->precio_u = ($isiva>0)?$val->Valor-($val->Valor)*($isiva/100):$val->Valor;
+                        $sumiva+=($isiva>0)?($val->Valor)*($isiva/100):0;
                         $facbody->precio_total =$facbody->precio_u * $facbody->cant ;
                         $facbody->id_producto = $i_pro["id"];
                         $facbody->id_head = $headfact->n_documentos;
