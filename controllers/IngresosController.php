@@ -225,7 +225,7 @@ class IngresosController extends Controller
                             $chargem = new Charges();
                             $chargem->n_document = $headfact->n_documentos;;
                             $chargem->person_id = $person->id;
-                            $chargem->Description = "bodyfact";
+                            $chargem->Description = $json->Descripcion;
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
                             if ($chargem->save()) {
