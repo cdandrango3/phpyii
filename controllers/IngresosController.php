@@ -225,14 +225,14 @@ class IngresosController extends Controller
                             $chargem = new Charges();
                             $chargem->n_document = $headfact->n_documentos;;
                             $chargem->person_id = $person->id;
-                            $chargem->Description = $json->Descripcion;
+                            $chargem->Description = $json->Descripcion;;
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
                             if ($chargem->save()) {
                                 $charges_detail = new ChargesDetail();
                                 $charges_detail->id_charge = $chargem->id;
                                 $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:18;
-                                $charges_detail->Description = $json->Descripcion;
+                                $charges_detail->Description = $json->Descripcion;;
                                 $charges_detail->balance = $facturafin->total;
                                 $charges_detail->comprobante = ($json->Comprobante)?:"efectivo";
                                 $charges_detail->saldo = $facturafin->total;
