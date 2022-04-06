@@ -88,7 +88,7 @@ class IngresosController extends Controller
                 $facturafin->subtotal0 = 0;
                 $facturafin->iva = $sumiva;
                 $facturafin->total = $facturafin->subtotal12 + $facturafin->iva;
-                $facturafin->description = "hola1";
+                $facturafin->description = $json->Descripcion;
                 $facturafin->id_head = $headfact->n_documentos;
                 $facturafin->save();
                 if ($facturafin->save()) {
@@ -232,7 +232,7 @@ class IngresosController extends Controller
                                 $charges_detail = new ChargesDetail();
                                 $charges_detail->id_charge = $chargem->id;
                                 $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:18;
-                                $charges_detail->Description = "Efectivo";
+                                $charges_detail->Description = $json->Descripcion;
                                 $charges_detail->balance = $facturafin->total;
                                 $charges_detail->comprobante = ($json->Comprobante)?:"efectivo";
                                 $charges_detail->saldo = $facturafin->total;
