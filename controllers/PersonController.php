@@ -12,6 +12,7 @@ public function actionIndex(){
     ob_start();
     ob_implicit_flush(false);
     require('data.json');
+    ini_set('max_execution_time', 300);
     $details = json_decode(ob_get_clean(),true);
 foreach($details as $value){
     $NombreC=$value["Nombre"] ." ".$value["Apellido"] ;
@@ -23,7 +24,7 @@ $person=New Person();
 $person->person_type_id=1;
 $person->name=$NombreC;
 $person->cedula=strval($Cedula);
-$person->phones=$Telefono;
+$person->phones=strval($Telefono);
 $person->institution_id=1;
 $person->city_id=1;
 $person->special_taxpayer=1;

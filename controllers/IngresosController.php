@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\AccountingSeats;
 use app\models\AccountingSeatsDetails;
+use app\models\Bank;
+use app\models\BankDetails;
 use app\models\Charges;
 use app\models\ChargesDetail;
 use app\models\Clients;
@@ -50,6 +52,8 @@ class IngresosController extends Controller
             if ($headfact->save()) {
                 $sum = 0;
                 $sumiva=0;
+                $sum12=0;
+                $sum0=0;
                 if (!empty($json->Cobros)) {
                     foreach ($json->Cobros as $val) {
                         $id_product = new Product;
@@ -63,7 +67,8 @@ class IngresosController extends Controller
                         $facbody->id_producto = $i_pro["id"];
                         $facbody->id_head = $headfact->n_documentos;
                         $facbody->save();
-                        $sum += $facbody->precio_total;
+                        $sum12+=($isiva>0)?$facbody->precio_total:0;
+                        $sum0+=($isiva==0)?$facbody->precio_total:0;
                     }
                 }
                 else{
@@ -78,16 +83,17 @@ class IngresosController extends Controller
                     $facbody->id_producto = $i_pro["id"];
                     $facbody->id_head = $headfact->n_documentos;
                     $facbody->save();
-                    $sum += $facbody->precio_total;
+                    $sum12+=($isiva>0)?$facbody->precio_total:0;
+                    $sum0+=($isiva==0)?$facbody->precio_total:0;
                 }
                 $facturafin = new Facturafin;
                 $c = rand(1, 100090000);
                 $this->id = $c;
                 $facturafin->id = $c;
-                $facturafin->subtotal12 = $sum ?: 0;
-                $facturafin->subtotal0 = 0;
+                $facturafin->subtotal12 = $sum12 ?: 0;
+                $facturafin->subtotal0 = $sum0?:0;
                 $facturafin->iva = $sumiva;
-                $facturafin->total = $facturafin->subtotal12 + $facturafin->iva;
+                $facturafin->total = $facturafin->subtotal12 + $facturafin->subtotal0+ $facturafin->iva;
                 $facturafin->description = $json->Descripcion;
                 $facturafin->id_head = $headfact->n_documentos;
                 $facturafin->save();
@@ -229,9 +235,10 @@ class IngresosController extends Controller
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
                             if ($chargem->save()) {
+                                $bank=BankDetails::find()->where(["number_account"=>$json->Formas->NCuenta])->one();
                                 $charges_detail = new ChargesDetail();
                                 $charges_detail->id_charge = $chargem->id;
-                                $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:18;
+                                $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:$bank->chart_account_id;
                                 $charges_detail->Description = $json->Descripcion;;
                                 $charges_detail->balance = $facturafin->total;
                                 $charges_detail->comprobante = ($json->Comprobante)?:"efectivo";
