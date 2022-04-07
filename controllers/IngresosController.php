@@ -4,6 +4,8 @@ namespace app\controllers;
 
 use app\models\AccountingSeats;
 use app\models\AccountingSeatsDetails;
+use app\models\Bank;
+use app\models\BankDetails;
 use app\models\Charges;
 use app\models\ChargesDetail;
 use app\models\Clients;
@@ -229,9 +231,10 @@ class IngresosController extends Controller
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
                             if ($chargem->save()) {
+                                $bank=BankDetails::find()->where(["number_account"=>$json->Formas->NCuenta])->one();
                                 $charges_detail = new ChargesDetail();
                                 $charges_detail->id_charge = $chargem->id;
-                                $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:18;
+                                $charges_detail->chart_account = ($json->Formas->TipoMetodo=="Caja")?1770:$bank->chart_account_id;
                                 $charges_detail->Description = $json->Descripcion;;
                                 $charges_detail->balance = $facturafin->total;
                                 $charges_detail->comprobante = ($json->Comprobante)?:"efectivo";

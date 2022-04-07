@@ -66,7 +66,7 @@ class Person extends \yii\db\ActiveRecord
             [['address', 'emails', 'id_myhouse'], 'string'],
             [['created_at', 'updated_at', 'deleted_at'], 'safe'],
             [['ruc'], 'string', 'max' => 13],
-            [['cedula'], 'string', 'max' => 10],
+            [['cedula'], 'string', 'max' => 20],
             [['name', 'phones'], 'string', 'max' => 255],
             [['commercial_name'], 'string', 'max' => 254],
             [['city_id'], 'exist', 'skipOnError' => true, 'targetClass' => City::className(), 'targetAttribute' => ['city_id' => 'id']],
