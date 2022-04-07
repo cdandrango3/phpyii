@@ -9,16 +9,14 @@ use yii\web\Controller;
 class PersonController extends Controller
 {
 public function actionIndex(){
-    ob_start();
-    ob_implicit_flush(false);
-    require('data.json');
-    $details = json_decode(ob_get_clean(),true);
-    $NombreC=$details["Nombre"] ." ".$details["Apellido"] ;
-    $Cedula=$details["Cedula"];
-    $Correo=$details["Correo"];
-    $Telefono=$details["Telefono"];
-    $Adress="Nelson Estupiñan N75-12 y Francisco Granizo";
-    $id=$details["id"];
+    $details=json_decode($_GET["values"]);
+       yii::debug($details);
+    $NombreC=$details->Nombre ." ".$details->Apellido;
+    $Cedula=$details->Cedula;
+    $Correo=$details->Correo;
+    $Telefono=$details->Telefono;
+    $Adress="Nelson Estupiñan N75-12 y Francisco Granizo"." ".$details->Casa;
+    $id=$details->id;
 $person=New Person();
 $person->person_type_id=1;
 $person->name=$NombreC;
@@ -43,5 +41,5 @@ if($person->save()){
 
 
 }
-}
+
 }
