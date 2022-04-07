@@ -27,7 +27,7 @@ public function actionIndex(){
         $chart_account=New ChartAccounts;
         $chart_account->institution_id=1;
         $chart_account->parent_id=13125;
-        $chart_account->code="1.1.1.8";
+        $chart_account->code=$this->nextcode();
         $chart_account->slug=$data->Banco." ".$data->NombreCuenta;
         $chart_account->bigparent_id=NULL;
         $chart_account->save();
@@ -49,5 +49,11 @@ public function actionIndex(){
     }
 
 }
+    public function nextcode(){
+        $lastModels = ChartAccounts::find()->where(['parent_id' => 13125, 'institution_id' => 1])->orderBy('code DESC')->one();
+        $ultimo=explode(".",$lastModels->code);
+        $ultimof=$ultimo[count($ultimo)-1]+1;
+        return "1.1.3.".$ultimof;
 
+    }
 }

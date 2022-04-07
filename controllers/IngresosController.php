@@ -8,6 +8,7 @@ use app\models\Bank;
 use app\models\BankDetails;
 use app\models\Charges;
 use app\models\ChargesDetail;
+use app\models\ChartAccounts;
 use app\models\Clients;
 use app\models\FacturaBody;
 use app\models\Facturafin;
@@ -354,3 +355,4 @@ class IngresosController extends Controller
     }
 
     }
+
