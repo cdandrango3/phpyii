@@ -42,7 +42,7 @@ class IngresosController extends Controller
             $num=explode("-",$nfac["n_documentos"])[2]?:1;
             $headfact->n_documentos = $this->getnfact(1,3)."-".$this->getnfact(1,3)."-".$this->getnfact(intval($num)+1,12);
             $headfact->autorizacion = "";
-            $headfact->id_personas = $person->id;
+            $headfact->id_personas = $person->cedula;
             $headfact->tipo_de_documento = "Cliente";
             $headfact->save();
             yii::debug($headfact->errors);
