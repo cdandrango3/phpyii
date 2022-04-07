@@ -53,7 +53,7 @@ public function actionIndex(){
         $lastModels = ChartAccounts::find()->where(['parent_id' => 13125, 'institution_id' => 1])->orderBy('code DESC')->one();
         $ultimo=explode(".",$lastModels->code);
         $ultimof=$ultimo[count($ultimo)-1]+1;
-        return "1.1.3.".$ultimof;
+        return "1.1.1.3.".$ultimof;
 
     }
 }
