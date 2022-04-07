@@ -93,7 +93,7 @@ class IngresosController extends Controller
                 $facturafin->subtotal12 = $sum12 ?: 0;
                 $facturafin->subtotal0 = $sum0?:0;
                 $facturafin->iva = $sumiva;
-                $facturafin->total = $facturafin->subtotal12 + $facturafin->iva;
+                $facturafin->total = $facturafin->subtotal12 + $facturafin->subtotal0+ $facturafin->iva;
                 $facturafin->description = $json->Descripcion;
                 $facturafin->id_head = $headfact->n_documentos;
                 $facturafin->save();
