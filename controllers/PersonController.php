@@ -13,13 +13,12 @@ public function actionIndex(){
     ob_implicit_flush(false);
     require('data.json');
     $details = json_decode(ob_get_clean(),true);
-foreach($details as $value){
-    $NombreC=$value["Nombre"] ." ".$value["Apellido"] ;
-    $Cedula=$value["Cedula"];
-    $Correo=$value["Correo"];
-    $Telefono=$value["Telefono"];
+    $NombreC=$details["Nombre"] ." ".$details["Apellido"] ;
+    $Cedula=$details["Cedula"];
+    $Correo=$details["Correo"];
+    $Telefono=$details["Telefono"];
     $Adress="Nelson Estupiñan N75-12 y Francisco Granizo";
-    $id=$value["id"];
+    $id=$details["id"];
 $person=New Person();
 $person->person_type_id=1;
 $person->name=$NombreC;
