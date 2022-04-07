@@ -52,6 +52,8 @@ class IngresosController extends Controller
             if ($headfact->save()) {
                 $sum = 0;
                 $sumiva=0;
+                $sum12=0;
+                $sum0=0;
                 if (!empty($json->Cobros)) {
                     foreach ($json->Cobros as $val) {
                         $id_product = new Product;
@@ -65,7 +67,8 @@ class IngresosController extends Controller
                         $facbody->id_producto = $i_pro["id"];
                         $facbody->id_head = $headfact->n_documentos;
                         $facbody->save();
-                        $sum += $facbody->precio_total;
+                        $sum12+=($isiva>0)?$facbody->precio_total:0;
+                        $sum0+=($isiva==0)?$facbody->precio_total:0;
                     }
                 }
                 else{
@@ -80,14 +83,15 @@ class IngresosController extends Controller
                     $facbody->id_producto = $i_pro["id"];
                     $facbody->id_head = $headfact->n_documentos;
                     $facbody->save();
-                    $sum += $facbody->precio_total;
+                    $sum12+=($isiva>0)?$facbody->precio_total:0;
+                    $sum0+=($isiva==0)?$facbody->precio_total:0;
                 }
                 $facturafin = new Facturafin;
                 $c = rand(1, 100090000);
                 $this->id = $c;
                 $facturafin->id = $c;
-                $facturafin->subtotal12 = $sum ?: 0;
-                $facturafin->subtotal0 = 0;
+                $facturafin->subtotal12 = $sum12 ?: 0;
+                $facturafin->subtotal0 = $sum0?:0;
                 $facturafin->iva = $sumiva;
                 $facturafin->total = $facturafin->subtotal12 + $facturafin->iva;
                 $facturafin->description = $json->Descripcion;
