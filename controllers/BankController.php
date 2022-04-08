@@ -50,8 +50,12 @@ public function actionIndex(){
 
 }
     public function nextcode(){
-        $lastModels = ChartAccounts::find()->where(['parent_id' => 13125, 'institution_id' => 1])->orderBy(new \yii\db\Expression("string_to_array(code,'.')::int[] DESC"))->one();
-        $ultimo=explode(".",$lastModels->code);
+        $existmodel = ChartAccounts::find()->where(['parent_id' => 13125, 'institution_id' => 1])->orderBy(new \yii\db\Expression("string_to_array(code,'.')::int[] DESC"))->exists();
+       if(!$existmodel){
+           return "1.1.1.3.1";
+       }
+       $lastModels= ChartAccounts::find()->where(['parent_id' => 13125, 'institution_id' => 1])->orderBy(new \yii\db\Expression("string_to_array(code,'.')::int[] DESC"))->one();
+       $ultimo=explode(".",$lastModels->code);
         $ultimof=$ultimo[count($ultimo)-1]+1;
         return "1.1.1.3.".$ultimof;
 
