@@ -236,7 +236,7 @@ class IngresosController extends Controller
                             $chargem->type_charge = "Cobro";
                             $chargem->save();
                             if ($chargem->save()) {
-                                ($json->Formas->TipoMetodo=="Caja")?
+                                ($json->Formas->TipoMetodo!="Caja")?
                                 $bank=BankDetails::find()->where(["number_account"=>$json->Formas->NCuenta])->one():"";
                                 $charges_detail = new ChargesDetail();
                                 $charges_detail->id_charge = $chargem->id;
