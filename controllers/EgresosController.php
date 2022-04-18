@@ -32,7 +32,8 @@ class EgresosController extends Controller
 
     public function actionIndex()
     {
-
+            yii::debug($_POST["Fecha"]);
+            yii::debug("cualquier cosa");
             $Comprobante = $_POST["Comprobante"];
             $CuentaUid = $_POST["CuentaUid"];
             $Descripcion = $_POST["Descripcion"];
@@ -45,13 +46,13 @@ class EgresosController extends Controller
                 array(
                     'fields' => array(
                             'Comprobante'=>array('stringValue'=>$Comprobante),
-                            'CuentaUid'=>array('integerValue'=>$CuentaUid),
+                            'CuentaUid'=>array('stringValue'=>$CuentaUid),
                             'Descripcion'=>array('stringValue'=>$Descripcion),
-                            'Fecha'=>array('integerValue'=>$Fecha),
+                            'Fecha'=>array('stringValue'=>$Fecha),
                             'Proveedor'=>array('stringValue'=>$Proveedor),
-                            'Rubro'=>array('integerValue'=>$Rubro),
+                            'Rubro'=>array('stringValue'=>$Rubro),
                             'SubRubro'=>array('stringValue'=>$SubRubro),
-                            'Valor'=>array('integerValue'=>$Valor),
+                            'Valor'=>array('stringValue'=>$Valor),
             
                     ),
                     'createTime'=>'2020-05-13T23:00:29.0Z',
@@ -72,12 +73,10 @@ class EgresosController extends Controller
             );
 
             $context = stream_context_create($opts);
-            try{
-                $result = file_get_contents("https://firestore.googleapis.com/v1/projects/micasitaapp-d4b5c/databases/(default)/documents/conjuntos/9SUqbinOZqfRVN1mEKf4/egresos?key=AIzaSyBQc3z-lFzBoX2jx0d-XArGSKgdSpbDRkg", false, $context);
-      
-            }catch(e){
 
-            }
+                $result = file_get_contents("https://firestore.googleapis.com/v1/projects/micasitaapp-d4b5c/databases/(default)/documents/conjuntos/9SUqbinOZqfRVN1mEKf4/egresos?key=AIzaSyBQc3z-lFzBoX2jx0d-XArGSKgdSpbDRkg", false, $context);
+                yii::debug($result);
+
 
             return $this->renderContent("<h1>No se encontro</h1>");
 

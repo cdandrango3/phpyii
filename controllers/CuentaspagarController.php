@@ -19,7 +19,7 @@ use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\helpers\VarDumper;
 
-class CuentasPagarController extends Controller
+class CuentaspagarController extends Controller
 {
     public function behaviors()
     {
@@ -83,6 +83,7 @@ class CuentasPagarController extends Controller
             
             $opts = array('http' =>
                 array(
+                    'timeout' => 30,
                     'ignore_errors'=>true,
                     'method' => 'POST',
                     'header' => 'Content-type: application/json',
@@ -93,15 +94,8 @@ class CuentasPagarController extends Controller
             );
 
             $context = stream_context_create($opts);
-            try{
-                $result = file_get_contents("https://firestore.googleapis.com/v1/projects/micasitaapp-d4b5c/databases/(default)/documents/conjuntos/9SUqbinOZqfRVN1mEKf4/cuentasPagar?key=AIzaSyBQc3z-lFzBoX2jx0d-XArGSKgdSpbDRkg", false, $context);
-      
-            }catch(e){
 
-            }
-
-            return $this->renderContent("<h1>No se encontro</h1>");
-
+                file_get_contents("https://firestore.googleapis.com/v1/projects/micasitaapp-d4b5c/databases/(default)/documents/conjuntos/9SUqbinOZqfRVN1mEKf4/cuentasPagar?key=AIzaSyBQc3z-lFzBoX2jx0d-XArGSKgdSpbDRkg", false, $context);
         
     }
 }
